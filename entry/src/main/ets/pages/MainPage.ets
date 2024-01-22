@@ -19,6 +19,8 @@ struct MainPage {
   private noteScroller:Scroller = new Scroller()
   private arr:number[] = [1,2,3,4,5,6,7,8,9,10,11,12]
 
+  private new_id:number=0
+
   @Builder tabMonth(month: number) {
     Row(){
       Text(month.toString())
@@ -78,6 +80,18 @@ struct MainPage {
             .fontWeight(FontWeight.Bold)
           Divider()
             .margin({top:15})
+          Button('新建笔记',{ type: ButtonType.Capsule})
+            .onClick(()=>{
+              this.noteInfoList.push({
+                id: this.new_id++,
+                title: "笔记"+this.new_id.toString(),
+                content: "我是内容1",
+                date: "03/20",
+                imageArr: ""
+              })
+            }).borderRadius(8)
+              .backgroundColor(0x517a11)
+
           // 笔记列表
           Scroll(this.noteScroller){
             Flex({direction:FlexDirection.Column}){
@@ -166,44 +180,44 @@ struct MainPage {
     // 为了展示页面效果添加的临时数据
     this.noteInfoList = [
       {
-        id: 1,
-        title: "笔记1",
-        content: "我是内容1",
+        id: this.new_id++,
+        title: "笔记"+this.new_id.toString(),
+        content: "我是内容",
         date: "03/20",
         imageArr: ""
       },
       {
-        id: 2,
-        title: "",
-        content: "我是内容2",
+        id: this.new_id++,
+        title: "笔记"+this.new_id.toString(),
+        content: "我是内容",
         date: "02/21",
         imageArr: ""
       },
       {
-        id: 3,
-        title: "笔记3",
-        content: "我是内容2",
+        id: this.new_id++,
+        title: "笔记"+this.new_id.toString(),
+        content: "我是内容",
         date: "02/21",
         imageArr: ""
       },
       {
-        id: 4,
-        title: "笔记4",
-        content: "我是内容2",
+        id: this.new_id++,
+        title: "笔记"+this.new_id.toString(),
+        content: "我是内容",
         date: "02/21",
         imageArr: ""
       },
       {
-        id: 5,
-        title: "笔记5",
-        content: "我是内容2",
+        id: this.new_id++,
+        title: "笔记"+this.new_id.toString(),
+        content: "我是内容",
         date: "01/21",
         imageArr: ""
       },
       {
-        id: 6,
-        title: "笔记6",
-        content: "我是内容2",
+        id: this.new_id++,
+        title: "笔记"+this.new_id.toString(),
+        content: "我是内容",
         date: "01/21",
         imageArr: ""
       }
