@@ -1,5 +1,6 @@
 import CommonConstants from '../common/constants/CommonConstants'
 import NoteInfo from '../common/bean/NoteInfo'
+import router from '@ohos.router';
 
 @Component
 export struct NotebookItem {
@@ -48,6 +49,15 @@ export struct NotebookItem {
       .justifyContent(FlexAlign.SpaceBetween)
       .borderRadius(12)
       .height(108)
+      .onClick(()=>{
+        router.pushUrl({url:'pages/NotePage'})
+          .then(()=>{
+
+        }).catch(()=>{
+
+        })
+      })
+
       // .onClick((e) => {
       //   this.click(this.noteInfo.id)
       // })
